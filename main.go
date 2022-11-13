@@ -2,9 +2,13 @@ package main
 
 import (
 	"fmt"
+	"math"
+	"math/rand"
 	"os"
 	"path"
 )
+
+var c, python, java bool
 
 func main() {
 	// first program
@@ -123,6 +127,67 @@ func main() {
 	}
 	fmt.Println("Nice to meet you all.")
 
+	// I love number
+	fmt.Println("I love number: ", rand.Intn(10))
+
+	// square root
+	fmt.Println("square root of 49 is", math.Sqrt(49))
+
+	// exported variables started with capital letter
+	fmt.Println(math.Pi)
+
+	// types come after the variable name
+	fmt.Println(add(1, 2))
+
+	// function continued to omit type if repeated
+	sayMessageTo("hello", "Ahmed")
+
+	// a function can return any number of results
+	p, q := swap("world", "hello")
+	fmt.Println(p, q)
+
+	// naked return and named return values
+	fmt.Println(split(17))
+
+	// variables on package or function scope
+	// zero values
+	// 0 for numbers
+	// false for boolean
+	// empty string for strings
+	var i int
+	fmt.Println(i, c, python, java)
+	fmt.Printf("%v %v %v %q", i, c, python, java)
+	fmt.Println()
+
+	// variable and initializer
+	// type can be taken from value
+	var l, k int = 1, 2
+	var xyz = "test"
+	fmt.Println(l, k, xyz)
+
+	// short variable declaration  inside the function only
+	yzx := "hello world"
+	fmt.Println(yzx)
+
+	// constants  -short declaration not working here-
+	const Course = "golang"
+	fmt.Println(Course)
+
+}
+
+func split(sum int) (x, y int) {
+	x = sum * 4 / 9
+	y = sum - x
+	return
+}
+func swap(x, y string) (string, string) {
+	return y, x
+}
+func sayMessageTo(m, p string) {
+	fmt.Println(m, p, "!")
+}
+func add(a int, b int) int {
+	return a + b
 }
 
 func multi() (int, int) {
