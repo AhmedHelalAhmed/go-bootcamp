@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"path"
 )
 
@@ -89,6 +90,38 @@ func main() {
 	min := int8(127)
 	max := int16(1000)
 	fmt.Println(max + int16(min))
+
+	// count arguments
+	count := len(os.Args) - 1
+	fmt.Printf("There are %d names.\n", count)
+
+	// print the path
+	fmt.Println(os.Args[0])
+
+	// print your name
+	if len(os.Args)-1 >= 1 {
+		fmt.Println(os.Args[1])
+		fmt.Println("Hello", os.Args[1])
+		fmt.Println("How are you?")
+	}
+
+	// greet more people
+
+	peopleCount := len(os.Args) - 1
+	people := os.Args
+	if peopleCount > 0 {
+		fmt.Println("There are", peopleCount, "people")
+	}
+	if peopleCount >= 1 {
+		fmt.Println("Hello great", people[1], "!")
+	}
+	if peopleCount >= 2 {
+		fmt.Println("Hello great", people[2], "!")
+	}
+	if peopleCount >= 3 {
+		fmt.Println("Hello great", people[3], "!")
+	}
+	fmt.Println("Nice to meet you all.")
 
 }
 
