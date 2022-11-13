@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 func main() {
@@ -49,6 +48,6 @@ func main() {
 	planet, isTrue, temp = "Mars", true, 19.5
 	println("Air is good on " + planet)
 	println("It's", isTrue)
-	println("It's", math.Round(temp), "degrees")
+	println("It's", temp, "degrees")
 
 }
