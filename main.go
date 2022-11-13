@@ -68,6 +68,28 @@ func main() {
 	// discard the file
 	dir, _ := path.Split("secret/file.txt")
 	println(dir)
+
+	// convert and fix #1
+	aa, bb := 10, 5.5
+	fmt.Println(float64(aa) + bb)
+
+	// convert and fix #2
+	aaa, bbb := 10, 5.5
+	aaa = int(bbb)
+	fmt.Println(float64(aaa) + bbb)
+
+	// convert and fix #3
+	fmt.Println(float32(5.5))
+
+	// convert and fix #4
+	age := 2
+	fmt.Println(7.5 + float32(age))
+
+	// convert and fix #5
+	min := int8(127)
+	max := int16(1000)
+	fmt.Println(max + int16(min))
+
 }
 
 func multi() (int, int) {
