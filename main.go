@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"path"
 )
 
 func main() {
@@ -50,4 +51,25 @@ func main() {
 	println("It's", isTrue)
 	println("It's", temp, "degrees")
 
+	// multi short func
+	_, b := multi()
+	fmt.Println(b)
+
+	// swapper
+	color1, color2 := "red", "blue"
+	color1, color2 = "orange", "green"
+	fmt.Println(color1, color2)
+
+	// swapper #2
+	red, blue := "red", "blue"
+	red, blue = blue, red
+	fmt.Println(red, blue)
+
+	// discard the file
+	dir, _ := path.Split("secret/file.txt")
+	println(dir)
+}
+
+func multi() (int, int) {
+	return 5, 4
 }
