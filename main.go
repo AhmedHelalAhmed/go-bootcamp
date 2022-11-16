@@ -10,6 +10,13 @@ import (
 
 var c, python, java bool
 
+type Coordinate struct {
+	X, Y float64
+}
+
+func (point Coordinate) Abs() float64 {
+	return math.Sqrt(point.X*point.X + point.Y*point.Y)
+}
 func main() {
 	// first program
 	fmt.Println("Hello, world!")
@@ -172,6 +179,10 @@ func main() {
 	// constants  -short declaration not working here-
 	const Course = "golang"
 	fmt.Println(Course)
+
+	// methods on struct
+	po := Coordinate{1, 2}
+	fmt.Println(po.Abs())
 
 }
 
